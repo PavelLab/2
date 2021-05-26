@@ -39,7 +39,6 @@ public:
 
 	//вектор значений величины с подсчетом похожих значений
 	std::vector<Node> Create_sorted_vec(std::vector <int> &vec) {
-		std::vector <Node> sort_vec;
 		Node Elem;
 		for (int i = 0; i < size; i++) {
 			Elem.value = vec[i];
@@ -110,7 +109,7 @@ public:
 		for (int i = 0, j = 0; i < x; i++) {
 			//проверка, есть ли такая величина в массиве
 			if (i == sort_vec[j].value) {
-				func_value += sort_vec[i].amount;
+				func_value += sort_vec[j].amount;
 				j++;
 			}
 		}
@@ -141,7 +140,7 @@ public:
 	//Функция распределения
 	double Distribution_function(double x) {
 		if (sort_vec.empty()) throw - 1;
-		if (x <= sort_vec[0].value) return 0;
+		if (x <= 0) return 0;
 		double func_value = 0;
 		for (int i = 0; i < x; i++) {
 			func_value += Second_player_probability(i);
@@ -157,5 +156,72 @@ public:
 				max_deviat = abs(Second_player_probability(sort_vec[i].value) - Frequency(i));
 		}
 		return max_deviat;
+	}
+};
+
+struct Interval
+{
+	double left_boundary=0, right_boundary=0;
+	int quantity=0;
+	double probability=0;
+};
+
+class Hypothesis {
+public:
+	Interval* intervals;
+	Experiment *experem;
+	int size;
+
+	Hypothesis(Experiment *_experem, int number){
+		experem = _experem;
+		size = number;
+		intervals = new Interval[size];
+	}
+
+	void set_boundary(int i, double left, double right) {
+		intervals[i].left_boundary = left;
+		intervals[i].right_boundary = right;
+	}
+
+	void calculate_probab() {
+		if (size > 1) {
+			intervals[0].probability = experem->Distribution_function(intervals[0].right_boundary); //(-oo,right) Probab = F(right)-0
+			for (int i = 1; i < size - 1; i++) {
+				intervals[i].probability = experem->Distribution_function(intervals[i].right_boundary)- experem->Distribution_function(intervals[i].left_boundary);
+			}
+			intervals[size - 1].probability = 1-experem->Distribution_function(intervals[size-1].left_boundary); //(left,oo)  Probab = 1-F(left)
+		}
+	}
+
+	void calculate_quantity() {
+		for (int i =0, j = 0;  i<experem->sort_vec.size(); i++) {
+			while (j<size) {
+				//если значение sort_vec[i] попадает в последний интервал
+				if (j == size - 1) {
+					intervals[j].quantity += experem->sort_vec[i].amount;
+					break;
+				}
+				//проходим все интервалы
+				if ((intervals[j].left_boundary <= experem->sort_vec[i].value) && (experem->sort_vec[i].value < intervals[j].right_boundary)) {
+					intervals[j].quantity += experem->sort_vec[i].amount;
+					break;
+				}
+				j++;
+			}
+		}
+
+	}
+
+	double calculate_R_o() {
+		double R_0 = 0;
+		for (int i = 0; i < size; i++) {
+			R_0 += pow((intervals[i].quantity - experem->size * intervals[i].probability),2) / (experem->size * intervals[i].probability);
+		}
+		return R_0;
+	}
+
+
+	~Hypothesis() {
+		delete[] intervals;
 	}
 };

@@ -145,9 +145,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cpp\src\alglibinternal.cpp" />
+    <ClCompile Include="cpp\src\alglibmisc.cpp" />
+    <ClCompile Include="cpp\src\ap.cpp" />
+    <ClCompile Include="cpp\src\dataanalysis.cpp" />
+    <ClCompile Include="cpp\src\diffequations.cpp" />
+    <ClCompile Include="cpp\src\fasttransforms.cpp" />
+    <ClCompile Include="cpp\src\integration.cpp" />
+    <ClCompile Include="cpp\src\interpolation.cpp" />
+    <ClCompile Include="cpp\src\linalg.cpp" />
+    <ClCompile Include="cpp\src\optimization.cpp" />
+    <ClCompile Include="cpp\src\solvers.cpp" />
+    <ClCompile Include="cpp\src\specialfunctions.cpp" />
+    <ClCompile Include="cpp\src\statistics.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cpp\src\alglibinternal.h" />
+    <ClInclude Include="cpp\src\alglibmisc.h" />
+    <ClInclude Include="cpp\src\ap.h" />
+    <ClInclude Include="cpp\src\dataanalysis.h" />
+    <ClInclude Include="cpp\src\diffequations.h" />
+    <ClInclude Include="cpp\src\fasttransforms.h" />
+    <ClInclude Include="cpp\src\integration.h" />
+    <ClInclude Include="cpp\src\interpolation.h" />
+    <ClInclude Include="cpp\src\linalg.h" />
+    <ClInclude Include="cpp\src\optimization.h" />
+    <ClInclude Include="cpp\src\solvers.h" />
+    <ClInclude Include="cpp\src\specialfunctions.h" />
+    <ClInclude Include="cpp\src\statistics.h" />
+    <ClInclude Include="cpp\src\stdafx.h" />
     <ClInclude Include="Experiment.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>

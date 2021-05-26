@@ -18,6 +18,45 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\src\alglibinternal.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\alglibmisc.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\ap.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\dataanalysis.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\diffequations.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\fasttransforms.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\integration.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\interpolation.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\linalg.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\optimization.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\solvers.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\specialfunctions.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\src\statistics.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -25,6 +64,48 @@
     </ClInclude>
     <ClInclude Include="Experiment.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\alglibinternal.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\alglibmisc.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\ap.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\dataanalysis.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\diffequations.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\fasttransforms.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\integration.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\interpolation.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\linalg.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\optimization.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\solvers.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\specialfunctions.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\statistics.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\src\stdafx.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

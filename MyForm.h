@@ -859,7 +859,7 @@ private: System::Windows::Forms::Button^ button2;
 
 			//Считаем значение статистики Колмогова
 			double Kolmog_value=0;
-			for (double i = 0.5; i < pExperiment->full_sort_vec[pExperiment->size-1]+1; i++) {
+			for (double i = 0.5; i < pExperiment->sort_vec[pExperiment->sort_vec.size() - 1].value + 1; i++) {
 				if (Kolmog_value < abs(pExperiment->Distribution_function(i) - pExperiment->Sample_distribution_function(i)))
 					Kolmog_value = abs(pExperiment->Distribution_function(i) - pExperiment->Sample_distribution_function(i));
 			}
